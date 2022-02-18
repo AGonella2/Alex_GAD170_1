@@ -5,8 +5,8 @@ using UnityEngine;
 public class XPSystem : MonoBehaviour
 {
     public int Level;
-    public int CurrXP;
-    public int ReqXP = 100;
+    public float CurrXP;
+    public float ReqXP = 100;
     public float Health;
     public float Mana;
     public float Attack;
@@ -32,22 +32,22 @@ public class XPSystem : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.T))
         {
             //Kill a Troglodyte worth 5xp
-            CurrXP + 5;
+            CurrXP += 5f;
             Debug.Log("You killed a Troglodyte!");
             Debug.Log("Current XP: " + CurrXP);
         }
         if(Input.GetKeyDown(KeyCode.Y))
         {
             //kill a Yeti worth 20xp
-            CurrXP + 20;
+            CurrXP += 20f;
             Debug.Log("You killed a Yeti)");
             Debug.Log("Current XP: " + CurrXP);
         }
         if(Input.GetKeyDown(KeyCode.U))
         {
             //Kill a Unicorn worth 40xp
-            CurrXP + 40;
-            Health - 9f;
+            CurrXP += 40f;
+            Health -= 9f;
             Debug.Log("You Killed a Unicorn, You Monster!");
             Debug.Log("You are cursed! Maximum Health is reduced by 9");
             Debug.Log("Current XP: " + CurrXP);
@@ -68,7 +68,8 @@ public class XPSystem : MonoBehaviour
         }
         if(Health<=0.0f)
         {
-            
+            //Shows up should you reduce your Health below/equal to 0 from unicorn murdering - for funsies.
+            Debug.Log("You have been Cursed with Undeath for murdering Unicorns");
         }
     }
 }
