@@ -6,7 +6,7 @@ public class XPSystem : MonoBehaviour
 {
     public int Level;
     public float CurrXP;
-    public float ReqXP = 100;
+    public float ReqXP = 100f;
     public float Health;
     public float Mana;
     public float Attack;
